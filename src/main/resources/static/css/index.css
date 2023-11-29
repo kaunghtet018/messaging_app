@@ -1,0 +1,154 @@
+.contanier{
+    width: 90%;
+    background-color: lightsteelblue;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.logoBox{
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+}
+.logo{
+    font-size: 32px;
+    font-weight: bold;
+    font-style: italic;
+}
+.navsBox{
+    width: 100%;
+}
+.chatsBox{
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.chatsTitleBox{
+    width: 100%;
+    height: 54px;
+    vertical-align:middle;
+    border-radius: 2px;
+}
+.chatsTitle{
+    font-size: 28px;
+    font-weight: bold;
+}
+.chatsTitle2{
+    font-size: 24px;
+    font-weight: bold;
+}
+.chatBoxDisplay{
+    background-color: lightblue;
+    height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.chatBoxDisplay::-webkit-scrollbar{
+    display: none;
+}
+.chatBox{
+    background-color: aliceblue;
+    margin: 5px;
+    height: 80px;
+    border-radius: 5px;
+    display: block;
+}
+
+.profileImage{
+    width: 100%;
+}
+
+.profileImageBox{
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+    margin: 5px;
+    border: 2px solid dodgerblue;
+    border-radius: 25%;
+}
+.profileImageCell{
+    width: 80px;
+    vertical-align: top;
+}
+.nameCell, .lastStatusCell{
+    vertical-align: top;
+}
+.nameCell{
+    height: 20px;
+}
+.lastStatusCell{
+    height: 51px;
+}
+.accountName{
+    font-size: 20px;
+    font-weight: 600;
+    font-style: italic;
+    color: tomato;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+  	
+}
+tr,td{
+	border: none;
+	padding: 0;
+}
+.newMsgCell{
+    width: 50px;
+    vertical-align: middle;
+    align-items: center;
+}
+.newMsgBox{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: dodgerblue;
+    color: white;
+    margin: auto;
+}
+.hover-effect{
+	background-color: lightskyblue;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+}
+.hover-effect:hover{
+	background-color: dodgerblue;
+}
+.accordion-title{
+	font-size: 19px;
+	font-weight: bold;
+}
+
+#navPos-0{
+    display: block;
+}
+
+#navPos-1{
+    display: none;
+}
+
+
+
+@media (max-width:700px){
+    #navPos-0{
+        display: none;
+    }
+    #navPos-1{
+        display: block;
+    }
+    .navsBox{
+        display: flex;
+        justify-content: space-between;
+    }
+    .navBox{
+        width: 32.5%;
+        display: inline-block;
+        
+    }
+}

@@ -1,0 +1,192 @@
+.contanier {
+			width: 90%;
+			background-color: lightsteelblue;
+			margin: auto;
+			margin-top: 20px;
+			padding: 10px;
+			border-radius: 5px;
+		}
+
+		.logoBox {
+			width: 100%;
+			height: 50px;
+			padding-left: 10px;
+		}
+
+		.logo {
+			font-size: 32px;
+			font-weight: bold;
+			font-style: italic;
+		}
+
+		.navsBox {
+			width: 100%;
+		}
+
+		.chatsBox {
+			width: 100%;
+			border-radius: 5px;
+			overflow: hidden;
+		}
+
+		.chatsTitleBox {
+			width: 100%;
+			height: 54px;
+			vertical-align: middle;
+			border-radius: 2px;
+			padding:4px 10px 4px 10px;
+		}
+
+		.chatsTitle {
+			font-size: 28px;
+			font-weight: bold;
+		}
+
+		.chatsTitle2 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		.messageBoxDisplay {
+			background-color: lightblue;
+			height: 350px;
+			overflow-y: auto;
+			overflow-x: hidden;
+			display: flex;
+			flex-direction: column-reverse;
+		}
+
+		.messageBoxDisplay::-webkit-scrollbar {
+			display: none;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+
+		}
+
+		tr,
+		td {
+			border: none;
+			padding: 0;
+		}
+
+		.profileImageBox {
+			width: 46px;
+			height: 46px;
+			border: 2px solid blue;
+			border-radius: 15px;
+			overflow: hidden;
+		}
+
+		img {
+			width: 100%;
+		}
+
+		.profileNameBox {
+			text-align: start;
+		}
+
+		.profileNameBox button {
+			background-color: transparent;
+			border: none;
+			outline: none;
+		}
+
+		.profileName {
+			font-size: 20px;
+			font-weight: 600;
+			font-style: italic;
+			color: tomato;
+		}
+
+		.messageBox {
+			width: 320px;
+			background-color: aliceblue;
+			padding: 5px;
+			margin: 5px;
+			border-radius: 5px;
+		}
+
+		.messageImage {
+			width: 100%;
+			margin-top: 2px;
+			border-radius: 5px;
+		}
+
+		.right {
+			background-color: rgb(128, 255, 255);
+			margin-left: auto;
+		}
+
+		.accountName {
+			color: tomato;
+			font-weight: bold;
+			font-size: 15px;
+		}
+
+		.messageSendTime {
+			color: limegreen;
+			font-weight: bold;
+			font-size: 14px;
+			font-style: italic;
+		}
+
+		.messageContent {
+			font-size: 18px;
+		}
+
+		.messageTypeBox {
+			height: 50px;
+			background-color: lightblue;
+			padding: 5px;
+			margin-bottom: 0;
+		}
+
+		.hover-effect {
+			background-color: lightskyblue;
+			font-size: 18px;
+			font-weight: bold;
+			text-align: center;
+		}
+
+		.hover-effect:hover {
+			background-color: dodgerblue;
+		}
+
+		.accordion-title {
+			font-size: 19px;
+			font-weight: bold;
+		}
+
+		#navPos-0 {
+			display: block;
+		}
+
+		#navPos-1 {
+			display: none;
+		}
+
+
+
+		@media (max-width:700px) {
+			#navPos-0 {
+				display: none;
+			}
+
+			#navPos-1 {
+				display: block;
+			}
+
+			.navsBox {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			.navBox {
+				width: 32.5%;
+				display: inline-block;
+
+			}
+		}

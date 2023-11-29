@@ -1,0 +1,421 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+	<title>Index Page</title>
+	<!--	<link rel="stylesheet" th:href="@{/css/message.css}">-->
+	<style>
+		.contanier {
+			width: 90%;
+			background-color: lightsteelblue;
+			margin: auto;
+			margin-top: 20px;
+			padding: 10px;
+			border-radius: 5px;
+		}
+
+		.logoBox {
+			width: 100%;
+			height: 50px;
+			padding-left: 10px;
+		}
+
+		.logo {
+			font-size: 32px;
+			font-weight: bold;
+			font-style: italic;
+		}
+
+		.navsBox {
+			width: 100%;
+		}
+
+		.chatsBox {
+			width: 100%;
+			border-radius: 5px;
+			overflow: hidden;
+		}
+
+		.chatsTitleBox {
+			width: 100%;
+			height: 54px;
+			vertical-align: middle;
+			border-radius: 2px;
+			padding:4px 10px 4px 10px;
+		}
+
+		.chatsTitle {
+			font-size: 28px;
+			font-weight: bold;
+		}
+
+		.chatsTitle2 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		.messageBoxDisplay {
+			background-color: lightblue;
+			height: 350px;
+			overflow-y: auto;
+			overflow-x: hidden;
+			display: flex;
+			flex-direction: column-reverse;
+		}
+
+		.messageBoxDisplay::-webkit-scrollbar {
+			display: none;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+
+		}
+
+		tr,
+		td {
+			border: none;
+			padding: 0;
+		}
+
+		.profileImageBox {
+			width: 46px;
+			height: 46px;
+			border: 2px solid dodgerblue;
+			border-radius: 15px;
+			overflow: hidden;
+		}
+
+		img {
+			width: 100%;
+		}
+
+		.profileNameBox {
+			text-align: start;
+		}
+
+		.profileNameBox button {
+			background-color: transparent;
+			border: none;
+			outline: none;
+		}
+
+		.profileName {
+			font-size: 20px;
+			font-weight: 600;
+			font-style: italic;
+			color: tomato;
+		}
+
+		.messageBox {
+			width: 320px;
+			background-color: aliceblue;
+			padding: 5px;
+			margin:5px;
+			border-radius: 5px;
+		}
+
+		.messageImage {
+			width: 100%;
+			margin-top: 2px;
+			border-radius: 5px;
+		}
+
+		.right {
+			background-color: rgb(128, 255, 255);
+			margin-left: auto;
+		}
+
+		.accountName {
+			color: tomato;
+			font-weight: bold;
+			font-size: 15px;
+		}
+
+		.messageSendTime {
+			color: limegreen;
+			font-weight: bold;
+			font-size: 14px;
+			font-style: italic;
+		}
+
+		.messageContent {
+			font-size: 18px;
+			white-space: pre-line;
+			word-wrap: break-word;
+			margin: 0px;
+		}
+
+		.messageTypeBox {
+			height: 50px;
+			background-color: lightblue;
+			padding: 5px;
+			margin-bottom: 0;
+		}
+
+		.hover-effect {
+			background-color: lightskyblue;
+			font-size: 18px;
+			font-weight: bold;
+			text-align: center;
+		}
+
+		.hover-effect:hover {
+			background-color: dodgerblue;
+		}
+
+		.accordion-title {
+			font-size: 19px;
+			font-weight: bold;
+		}
+
+		#navPos-0 {
+			display: block;
+		}
+
+		#navPos-1 {
+			display: none;
+		}
+
+
+
+		@media (max-width:700px) {
+			#navPos-0 {
+				display: none;
+			}
+
+			#navPos-1 {
+				display: block;
+			}
+
+			.navsBox {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			.navBox {
+				width: 32.5%;
+				display: inline-block;
+
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<section>
+		<div class="contanier">
+			<header>
+				<div class="logoBox">
+					<span class="logo">
+						Messaging App
+					</span>
+				</div>
+			</header>
+			<div class="row p-0 m-0">
+				<div class="col-3 p-0" id="navPos-0">
+					<div class="accordion" id="accordionPanelsStayOpenExample">
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="panelsStayOpen-headingOne">
+								<button class="accordion-button" type="button" data-bs-toggle="collapse"
+									data-bs-target="#panelsStayOpen-collapseOne"
+									aria-controls="panelsStayOpen-collapseOne">
+									<span class="accordion-title">Menu</span>
+								</button>
+							</h2>
+							<div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+								aria-labelledby="panelsStayOpen-headingOne">
+								<div class="accordion-body p-0">
+									<table>
+										<tr>
+											<td>
+												<a class="nav-link text-light hover-effect" href="/index">Home</a>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<a class="nav-link text-light hover-effect"
+													th:href="@{'/account/'+${#ctx.session.userId}+'/profile'}">Profile</a>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<a class="nav-link text-light hover-effect"
+													href="/account/logout">Logout</a>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="chatsBox">
+						<div class="navsBox bg-light" id="navPos-1">
+							<table>
+								<tr>
+									<td><a class="nav-link text-light hover-effect" href="/index">Home</a></td>
+									<td><a class="nav-link text-light hover-effect"
+											th:href="@{'/account/'+${#ctx.session.userId}+'/profile'}">Profile</a></td>
+									<td><a class="nav-link text-light hover-effect" href="/account/logout">Logout</a>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="chatsTitleBox bg-light">
+							<div class="titleChatBox">
+								<div class="row">
+
+									<div class="col-8 py-0">
+										<table>
+											<tr>
+												<td style="width: 50px;vertical-align: top;">
+													<div th:if="${!chatRoom.isProfileNull}" class="profileImageBox">
+														<img
+															th:src="@{'/image/account/'+${chatRoom.imageAccountId}+'/show'}">
+													</div>
+													<div th:if="${chatRoom.isProfileNull}" class="profileImageBox" style="text-align: center;background-color: dodgerblue;">
+														<p th:text="${chatRoom.chatName.toUpperCase().charAt(0)}" style="font-size: 190%;font-weight: 500;color: aliceblue;">A</p>
+													</div>
+												</td>
+												<td style="vertical-align: top;">
+													<div class="profileNameBox">
+														<button type="button" data-bs-toggle="dropdown"
+															aria-expanded="false">
+															<span class="profileName"
+																th:text="${chatRoom.chatName}">Thae Thae</span>
+														</button>
+														<ul class="dropdown-menu">
+															<li><a class="dropdown-item"
+																	th:href="@{'/account/'+${chatRoom.imageAccountId}+'/profile'}">View
+																	Profile</a></li>
+															<li th:if="${!chatRoom.isBlocked}"><a class="dropdown-item"
+																	th:href="@{'/chatroom/'+${chatRoom.id}+'/block'}">Block
+																</a></li>
+															<li
+																th:if="${chatRoom.isBlocked && chatRoom.blockerId==#ctx.session.userId}">
+																<a class="dropdown-item"
+																	th:href="@{'/chatroom/'+${chatRoom.id}+'/unblock'}">Unblock
+																</a></li>
+														</ul>
+													</div>
+
+												</td>
+											</tr>
+										</table>
+									</div>
+									<div class="col-4 text-end">
+										<span class="chatsTitle2">Messages</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="messageBoxDisplay px-2"
+							th:style="${(chatRoom.isBlocked)?'height:400px':'height:350px'}">
+
+							<!-- message Box -->
+							<div th:each="message : ${messageList}">
+								<div th:class="'messageBox '+${(message.senderId==#ctx.session.userId)?'right':''}">
+										<div class="row my-0">
+											<div class="col text-start">
+												<span class="accountName"
+													th:text="${(message.senderId==#ctx.session.userId)?'You':message.senderName}">
+													Thae Thae
+												</span>
+											</div>
+											<div class="col text-end">
+												<span class="messageSendTime" th:text="${message.sendTime}">
+													11:11 PM
+												</span>
+											</div>
+										</div>
+										<div class="row my-0">
+											<div class="col">
+												<p th:if="${message.type=='text'}" class="messageContent" th:text="${message.content}">
+													This is message content
+												</p>
+												<img th:if="${message.type=='image'}" th:src="@{'/image/message/'+${message.id}+'/show'}"
+													class="messageImage">
+												<video th:if="${message.type=='video'}" th:src="@{'/video/message/'+${message.id}+'/show'}"
+													class="messageImage">
+											</div>
+										</div>
+										
+									<div class="text-end my-0">
+										<span th:if="${message.isRead}" style="color: #001B79;">
+											<i class="bi bi-check-all"></i>
+										</span>
+										<span th:if="${!message.isRead}" style="color: #001B79;">
+											<i class="bi bi-check"></i>
+										</span>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+						<div class="messageTypeBox" th:if="${!chatRoom.isBlocked}">
+							<table>
+								<tr>
+									<td style="width: 50px;">
+										<div class="m-0">
+											<button type="button" class="btn btn-primary"
+												style="width: 45px;height: 36px;" onclick="changeForm()"><i
+													class="bi bi-plus-lg"></i></button>
+										</div>
+
+									</td>
+									<td>
+										<div class="p-0 m-0" id="textsendBox">
+											<form class="d-flex m-0" th:action="@{'/message/'+${chatRoomId}+'/newtext'}"
+												method="post">
+												<input class="form-control me-2" type="text" name="content"
+													placeholder="Type message" aria-label="Search">
+												<button class="btn btn-primary" type="submit">Send</button>
+											</form>
+										</div>
+										<div class="p-0 m-0" id="filesendBox">
+											<form class="d-flex m-0" th:action="@{'/message/'+${chatRoomId}+'/newfile'}"
+												method="post" enctype="multipart/form-data">
+												<input class="form-control me-2" type="file" name="sendfile"
+													placeholder="Type message" aria-label="Search">
+												<button class="btn btn-primary" type="submit">Send</button>
+
+											</form>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script>
+		const textsendBox = document.getElementById("textsendBox");
+		const filesendBox = document.getElementById("filesendBox");
+
+		textsendBox.style.display = "block";
+		filesendBox.style.display = "none";
+
+		const changeForm = function () {
+			const temp = textsendBox.style.display;
+			textsendBox.style.display = filesendBox.style.display;
+			filesendBox.style.display = temp;
+		}
+
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
